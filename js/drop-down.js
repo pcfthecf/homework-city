@@ -5,11 +5,11 @@ $(document).ready(function(){
 
 	event.preventDefault();
 
-	var city = $('#city-type').val();
-	city = ['nyc', 'la', 'sf', 'atx', 'syd'];
+	//var city = $('#city-type').val();
+	cities = ['nyc', 'la', 'sf', 'atx', 'syd'];
 	//city.push('ldn'); --> TEST
 	
-	city.forEach(function(element, index){
+	cities.forEach(function(element, index){
 
 		$('select').append('<option value='+element+'>'+element+'</option>');
 	})
@@ -17,6 +17,8 @@ $(document).ready(function(){
 
 	$('select').change(changeBackground);
 		function changeBackground(){
+
+		var city = $('#city-type').val();
 
 		if(city =='nyc'){
 			$('body').attr('class', 'nyc');
